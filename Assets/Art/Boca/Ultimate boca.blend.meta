@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7e46b6c47f054234eac2ca880ca47281
-timeCreated: 1485007859
+guid: 54fe56e90c50f964ba35430883f591f0
+timeCreated: 1485010420
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -10,15 +10,15 @@ ModelImporter:
     100004: BoneL
     100006: BoneR
     100008: Cylinder
-    100010: //RootNode
-    100012: Polimark
+    100010: Polimark
+    100012: //RootNode
     400000: Armature
     400002: BoneC
     400004: BoneL
     400006: BoneR
     400008: Cylinder
-    400010: //RootNode
-    400012: Polimark
+    400010: Polimark
+    400012: //RootNode
     2300000: Cylinder
     3300000: Cylinder
     4300000: Polimark
@@ -66,7 +66,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1

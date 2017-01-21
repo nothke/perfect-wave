@@ -12,6 +12,7 @@ public class SenfController : MonoBehaviour
 
     public ParticleSystem senfticles;
 
+    public Transform scaleBone;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class SenfController : MonoBehaviour
     float refVelo;
     float squeeze;
 
-
+    bool endSqueeze;
 
     void Update()
     {
@@ -51,6 +52,9 @@ public class SenfController : MonoBehaviour
             rate = 100;
         }
         else squeezeGain = 0;
+
+        if (squeezeGain >= 1)
+            rate = 0;
 
         Vector3 pos = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
 
@@ -74,5 +78,8 @@ public class SenfController : MonoBehaviour
         squeezeV.y = -squeezeCurve.Evaluate(squeeze);
 
         bottleChild.transform.localPosition = noiseIdle + squeezeV * squeezeCurve.Evaluate(squeeze);
+
+        float scaleY = 1 - squeeze;
+        scaleBone.transform.localScale = new Vector3(1, 1, scaleY);
     }
 }

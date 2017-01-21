@@ -1,31 +1,24 @@
 fileFormatVersion: 2
-guid: 7e46b6c47f054234eac2ca880ca47281
-timeCreated: 1485007859
+guid: 14236b0aa452cdb4f9436ffecf198984
+timeCreated: 1485010418
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Armature
-    100002: BoneC
-    100004: BoneL
-    100006: BoneR
-    100008: Cylinder
-    100010: //RootNode
-    100012: Polimark
-    400000: Armature
-    400002: BoneC
-    400004: BoneL
-    400006: BoneR
-    400008: Cylinder
-    400010: //RootNode
-    400012: Polimark
-    2300000: Cylinder
-    3300000: Cylinder
-    4300000: Polimark
-    4300002: Cylinder
+    100000: Donji
+    100002: Gornji
+    100004: //RootNode
+    400000: Donji
+    400002: Gornji
+    400004: //RootNode
+    2300000: Donji
+    2300002: Gornji
+    3300000: Donji
+    3300002: Gornji
+    4300000: Gornji
+    4300002: Donji
     7400000: Default Take
     9500000: //RootNode
-    13700000: Polimark
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,7 +59,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
