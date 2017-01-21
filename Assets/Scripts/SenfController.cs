@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class SenfController : MonoBehaviour
 {
+    public static SenfController e;
+    void Awake() { e = this; }
 
     public Transform bottle;
     public Transform bottleChild;
 
     public ParticleSystem senfticles;
 
+
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public float maxRate = 100;
