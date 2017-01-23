@@ -19,8 +19,8 @@ public class PixelBoy : MonoBehaviour
     }
     void Update()
     {
-
-        float ratio = ((float)Camera.main.pixelWidth) / (float)Camera.main.pixelHeight;
+        Camera cam = GetComponent<Camera>();
+        float ratio = ((float)cam.pixelWidth) / (float)cam.pixelHeight;
         w = Mathf.RoundToInt(h * ratio);
 
     }

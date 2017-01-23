@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Clapperboard : MonoBehaviour
 {
+    public static Clapperboard e;
+    void Awake() { e = this; }
 
+    public AudioClip klapClip;
 
     public TextMesh text;
     public Animator anim;
 
-    int takeNum = 1;
-
+    public int takeNum = 1;
 
     private void Update()
     {
@@ -24,12 +26,18 @@ public class Clapperboard : MonoBehaviour
 
         anim.Play(0);
 
+        AngryDriector.e.HideTryAgain();
+
         takeNum++;
     }
 
     public void Clap()
     {
+        klapClip.PlayOnce(transform.position, 1, 1, 90, 1000);
+
         SenfController.e.senfticles.gameObject.SetActive(false);
         SenfController.e.senfticles.gameObject.SetActive(true);
+
+        VirshlaCollision.e.Cleanup();
     }
 }

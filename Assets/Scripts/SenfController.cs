@@ -7,6 +7,9 @@ public class SenfController : MonoBehaviour
     public static SenfController e;
     void Awake() { e = this; }
 
+    public AudioClip[] fljusovi;
+    public AudioClip[] inFljusovi;
+
     public Transform bottle;
     public Transform bottleChild;
 
@@ -37,15 +40,25 @@ public class SenfController : MonoBehaviour
 
     bool endSqueeze;
 
+    public float squeezeSeconds = 2;
+
+    public static float totalSenfSpent;
+
     void Update()
     {
         ParticleSystem.EmissionModule emission = senfticles.emission;
 
         float rate = 0;
 
+        if (Input.GetMouseButtonDown(0))
+            AudioUtils.PlayRandomOnce(fljusovi, Vector3.zero, 0.8f, Random.Range(0.9f, 1.1f), 100, 1000);
+
+        if (Input.GetMouseButtonUp(0))
+            AudioUtils.PlayRandomOnce(inFljusovi, Vector3.zero, 1, Random.Range(0.9f, 1.1f), 100, 1000);
+
         if (Input.GetMouseButton(0))
         {
-            squeezeGain += Time.deltaTime;
+            squeezeGain += Time.deltaTime / squeezeSeconds;
 
             squeezeGain = Mathf.Clamp01(squeezeGain);
 
@@ -55,6 +68,8 @@ public class SenfController : MonoBehaviour
 
         if (squeezeGain >= 1)
             rate = 0;
+
+        totalSenfSpent += rate;
 
         Vector3 pos = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
 
